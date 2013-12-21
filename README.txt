@@ -1,0 +1,1 @@
+An advanced note-taker for those who research many companies.

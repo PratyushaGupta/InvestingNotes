@@ -1,0 +1,67 @@
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash);
+
+body {
+	min-width: 360px;
+	overflow-x: hidden;
+}
+
+ul#list {
+	list-style-type: none;
+	margin: 3px;
+	padding: 0px;
+}
+
+li {
+	padding: 5px;
+}
+
+#notes {
+	width: 95%;
+	height: 150px;
+	border: 1px solid #E0E0E0;
+}
+
+#header {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 1.5em;
+}
+
+body {
+	font-family:sans-serif;
+	font-size:0.875em;
+}
+
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+hr {
+	width: 95%;
+	height: 1px;
+	background-color: #E0E0E0;
+	border: 0px;
+}
+
+button {
+	font-family: 'Anaheim', sans-serif;
+	font-size: 1em;
+	background-color: #F0F0F0;
+	border: 1px solid #E0E0E0;
+}
