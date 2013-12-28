@@ -17,9 +17,12 @@ li {
 }
 
 #notes {
+	font-family: sans-serif;
 	width: 95%;
 	height: 150px;
 	border: 1px solid #E0E0E0;
+	text-align: top;
+	padding: 5px;
 }
 
 #header {

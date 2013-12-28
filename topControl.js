@@ -7,20 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		var myNote = new SingleNote(input.val(), tabLocation);
 
 		addNotes(myNote);
+
+		$('#notes').val(null);
 	});
 });
 
 document.addEventListener('DOMContentLoaded', function() {
 	$('#keepinfo').click(function() {
 		clearData();
-	});
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-	$('#get').click(function() {
-		if (!gotten)
-			getData();
-
-		gotten = true;
 	});
 });
