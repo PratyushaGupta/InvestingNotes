@@ -1,3 +1,5 @@
+var gotten = false;
+
 document.addEventListener('DOMContentLoaded', function() {
 	$('#save').click(function() {
 		var input = $('#notes');
@@ -16,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	$('#get').click(function() {
-		getData();
+		if (!gotten)
+			getData();
+
+		gotten = true;
 	});
 });

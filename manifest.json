@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Data Sourcing",
+  "name": "Single Note",
   "description": "This extension allows you to easily take & source notes.",
   "version": "1.0",
 
@@ -22,6 +22,8 @@
       "js": ["geturl.js"]
     }
   ],
+
+  "offline_enabled": false,
 
   "background": {
     "scripts": ["background.js"]  

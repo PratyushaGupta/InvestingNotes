@@ -19,7 +19,6 @@ addNotes = function(newNote){
 	var string = makeString(notes);
 
 	chrome.storage.sync.set({'some': string});
-
 };
 
 
@@ -36,12 +35,20 @@ function makeString(temp) {
 
 clearData = function() {
 
-	$('#list').remove();
-	$('body').prepend('<ul id="list"></ul>');
+	var confirmation =confirm("Are you sure you want to clear this data?");
 
-	chrome.storage.sync.clear(function() {
-		alert("Storage Cleared");
-	});
+	if (confirmation) {
+
+		$('#list').remove();
+		$('body').prepend('<ul id="list"></ul>');
+
+		chrome.storage.sync.clear(function() {
+			alert("Note Cleared");
+		});
+	}
+
+	else
+		alert("You did not confirm.");
 };
 
 getData = function() {
