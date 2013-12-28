@@ -13,7 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-	$('#keepinfo').click(function() {
+	$('#clearcomp').click(function() {
 		clearData();
+	});
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	$('#newcomp').click(function() {
+		var title = prompt("What is the name of the company you're working on?");
+
+		if (title != null) {
+			newComp(title);
+		};
 	});
 });

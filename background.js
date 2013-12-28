@@ -1,7 +1,6 @@
-chrome.browserAction.setBadgeText({text: "note"});
-
 //an array of notes
 var notes = [];
+var currcomp = "";
 
 function SingleNote(content, address) {
 	this.content = content;
@@ -66,4 +65,9 @@ reverseString = function(string) {
 		var newnote = new SingleNote(eachelem[0],eachelem[1]);
 		addNotes(newnote);
 	}
+}
+
+newComp = function(title) {
+	$('#header').text(title);
+	currcomp = title;
 }
