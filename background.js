@@ -1,6 +1,6 @@
 //an array of notes
 var notes = [];
-var currcomp = "";
+var currcomp;
 
 function SingleNote(content, address) {
 	this.content = content;
@@ -16,8 +16,8 @@ addNotes = function(newNote){
 		newNote.content + '</a></li>'));
 
 	var string = makeString(notes);
-
-	chrome.storage.sync.set({'some': string});
+	string = currcomp + "!!" + string;
+	chrome.storage.sync.set({'current': string});
 };
 
 
@@ -34,16 +34,23 @@ function makeString(temp) {
 
 clearData = function() {
 
-	var confirmation =confirm("Are you sure you want to clear this data?");
+	var confirmation = confirm("Are you sure you want to clear this data?");
 
 	if (confirmation) {
 
 		$('#list').remove();
 		$('body').prepend('<ul id="list"></ul>');
 
+		$('#header').remove();
+
+		delete currcomp;
+		var currcomp;
+
 		chrome.storage.sync.clear(function() {
 			alert("Note Cleared");
 		});
+
+		notes = [];
 	}
 
 	else
@@ -51,23 +58,27 @@ clearData = function() {
 };
 
 getData = function() {
-	chrome.storage.sync.get('some', function(obj) {
-		var stringnote1 = obj["some"];
+	chrome.storage.sync.get('current', function(obj) {
+		var stringnote1 = obj['current'];
 		reverseString(stringnote1);
 	});
 };
 
 reverseString = function(string) {
-	var split = string.split("~");
+	var init = string.split("!!");
+	currcomp = init[0];
+	$('#header').text(currcomp);
+
+	var split = init[1].split("~");
 	for (var i = 0; i < (split.length - 1); i++) {
 		var temp = String(split[i]);
 		var eachelem = temp.split("|");
 		var newnote = new SingleNote(eachelem[0],eachelem[1]);
 		addNotes(newnote);
 	}
-}
+};
 
 newComp = function(title) {
 	$('#header').text(title);
 	currcomp = title;
-}
+};
