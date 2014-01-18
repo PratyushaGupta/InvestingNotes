@@ -33,11 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	$('#newcomp').click(function() {
-		var title = prompt("What is the name of the company you're working on? Be warned. " +
-			"This will clear the data from any other company.");
+
+		var title = prompt("What is the name of the company you're working on?");
 
 		if (title != null) {
-			clearData();
 			newComp(title);
 		};
 	});
