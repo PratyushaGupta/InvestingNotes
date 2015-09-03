@@ -1,1 +1,3 @@
-An advanced note-taker for those who research many companies.
+An advanced note-taker to simplify investing research.
+
+Abandoned.
